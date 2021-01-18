@@ -8,7 +8,9 @@ import java.awt.*;
 
 public class Pendulum implements Drawable, Updatable {
     final int doteX, doteY, radius, period;
-    final double len, weight, startAlpha;
+    final double len;
+    final double weight;
+    double startAlpha;
     double alpha, w;
 
 
@@ -73,9 +75,10 @@ public class Pendulum implements Drawable, Updatable {
         ball.status = 2;
         ball.len = Game.dist(ball.x, ball.y, doteX, doteY);
         ball.alpha = -alpha + Math.asin(((double) (ball.x - doteX)) / ball.len);
-//        double v = (w * Math.sin(Math.sqrt(Game.G / len) * time + startAlpha) * Math.sqrt(Game.G / len)) * len; // real speed
-//        double ballV = ball.vx * Math.cos(alpha) - ball.vy * Math.sin(alpha);
-//        double newV = (weight * v + ball.weight * ballV) / (weight + ball.weight);
-//        w = w * newV / v;
+        double v = (w * Math.sin(Math.sqrt(Game.G / len) * time + startAlpha) * Math.sqrt(Game.G / len)) * len; // real speed
+        double ballV = ball.vx * Math.cos(alpha) - ball.vy * Math.sin(alpha);
+        double newV = (weight * v + ball.weight * ballV) / (weight + ball.weight);
+        w = w * newV / v;
+        startAlpha = Math.acos(alpha / w) - Math.sqrt(Game.G / len) * time;
     }
 }

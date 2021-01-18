@@ -71,6 +71,12 @@ public class Ball implements Drawable, Updatable {
     public void start() {
         if (status == 0) {
             status = 1;
+        } else if (status == 2) {
+            status = 0;
+            x = startX;
+            y = startY;
+            vx = startVx;
+            vy = startVy;
         }
     }
 }
