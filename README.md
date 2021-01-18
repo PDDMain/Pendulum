@@ -1,6 +1,8 @@
 # Pendulum
 [jar-ник](https://github.com/PDDMain/Pendulum/blob/main/out/artifacts/pendulum_jar/pendulum.jar) для запуска приложения
 
+[Сам код](https://github.com/PDDMain/Pendulum/tree/main/pendulum/src)
+
 Управление только пробелом
 
 Симуляция взаимодействия маятника и летящего в него в круглого объекта
