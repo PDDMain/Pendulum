@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
+import java.security.Key;
 
 public class Main {
     private static final int WIDTH = 1200;
@@ -32,13 +33,28 @@ public class Main {
         FRAME.setLayout(new BorderLayout());
 //        BACKGROUND = ImageIO.read(new File("wallpaper.png")).getScaledInstance(HEIGHT, WIDTH, Image.SCALE_SMOOTH);
 
-        Timer drawableTimer = new Timer(30, new ActionListener() {
+        Timer drawableTimer = new Timer(30, e -> FRAME.repaint());
+        drawableTimer.start();
+
+        Timer updatableTimer = new Timer(30, e -> game.update());
+        updatableTimer.start();
+
+        FRAME.addKeyListener(new KeyListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                FRAME.repaint();
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                game.keyPressed(e);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
             }
         });
-        drawableTimer.start();
 
         MyPanel panel = new MyPanel();
         FRAME.add(panel);
