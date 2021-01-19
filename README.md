@@ -1,5 +1,6 @@
 # Pendulum
 [jar-ник](https://github.com/PDDMain/Pendulum/blob/main/out/artifacts/pendulum_jar/pendulum.jar) для запуска приложения
+[Выкладки и пересчет](https://github.com/PDDMain/Pendulum/blob/main/images/photo_2021-01-19_08-50-43.jpg)
 
 [Сам код](https://github.com/PDDMain/Pendulum/tree/main/pendulum/src)
 
